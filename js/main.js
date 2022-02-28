@@ -23,7 +23,7 @@ function setBillValue() {
 }
 
 function handleClick(e) {
-  if (e.target.innerHTML) {
+  
     let tip = e.target;
     tipButtons.forEach((btn) => {
       btn.classList.remove("btn-active");
@@ -33,9 +33,6 @@ function handleClick(e) {
     tipValue = parseInt(tip.innerHTML) / 100;
 
     customTip.value = "";
-  }
-  tipValue = 0.15;
-
   calculateResult();
 }
 
