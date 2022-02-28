@@ -1,0 +1,294 @@
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  background-color: #c5e4e7;
+  position: relative;
+}
+
+h3 {
+  color: var(--dark-grayish-cyan);
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+main.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .logo {
+  margin: 4.5rem 0;
+}
+
+main .card {
+  width: 65%;
+  background: var(--white);
+  padding: 3.5rem;
+  margin-top: 50px;
+  border-radius: 2.5rem;
+  display: flex;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.card .bill-container,
+.card .stats-person {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.input-wrapper {
+  width: 90%;
+  position: relative;
+}
+
+.input-wrapper .input-text {
+  width: 100%;
+  border: none;
+  text-align: right;
+  color: #00494d;
+  background-color: #f4fafa;
+  font-size: 2.5rem;
+  padding: 0.8rem 2.4rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.input-wrapper .input-text:focus,
+.input-tip:focus {
+  outline: none;
+  border: 2px solid var(--strong-cyan);
+}
+
+.input-wrapper img {
+  position: absolute;
+  top: 32%;
+  left: 5%;
+  width: 1.3rem;
+}
+
+.selected-tip .tip-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.tip-container .tip,
+.input-tip {
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  margin-top: 0.8rem;
+  width: 30%;
+  cursor: pointer;
+}
+
+.tip-container .tip:hover,
+.input-tip:hover{
+    background-color: #9fe8df;
+    color: var(--very-dark-cyan);
+}
+
+.tip.btn-active {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.input-tip {
+  font-size: 2.2rem;
+  border: none;
+  color: var(--very-dark-cyan) !important;
+  background-color: #f4fafa !important;
+}
+
+.error-msg {
+  display: none;
+  color: rgb(221, 13, 13);
+  text-align: right;
+  margin-right: 6rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.error-msg.show {
+  display: block;
+}
+
+#people.red-border {
+  border: 0.5px solid red;
+}
+
+
+/* status for person */
+
+.card .stats-person {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--very-dark-cyan);
+  border-radius: 2rem;
+}
+
+.stats-person .stats > div {
+  width: 100%;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stats {
+  width: 95%;
+}
+
+.stats p {
+  color: var(--white);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.stats span {
+  font-size: 1.3rem;
+  color: #7f9c9f;
+}
+
+.stats .value {
+  font-size: 4.6rem;
+  color: #26c0ab;
+  font-weight: 700;
+}
+
+.reset {
+  width: 95%;
+  background-color: #26c0ab;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  padding: 1.5rem 0;
+  color: var(--very-dark-cyan);
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  margin-top: 3.5rem;
+  transition: all 0.5s ease;
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+  cursor: pointer;
+}
+.reset:hover{
+    background-color: #9fe8df;
+}
+
+@media (min-width: 1400px) {
+
+}
+
+@media (max-width: 1400px) {
+  main .card {
+    width: 90%;
+    padding: 3rem;
+    margin-top: 1rem;
+  }
+
+  main .logo {
+    margin: 3rem 0;
+  }
+
+  .card .stats-person {
+    padding: 3rem;
+  }
+
+  .card .bill-container,
+  .card .stats-person {
+    gap: 3rem;
+  }
+
+  .stats-person .stats > div {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  main .card {
+    flex-direction: column;
+    width: 70%;
+    margin-bottom: 3rem;
+  }
+
+  .card .bill-container,
+  .card .stats-person {
+    width: 90%;
+    margin: 5rem;
+    margin-left: 3rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  main .logo {
+    margin: 4rem 0;
+  }
+
+  main .card {
+    padding: 2rem;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .tip-container .tip
+  ,.input-tip  {
+    width: 46%;
+  }
+
+  .stats .value {
+    font-size: 3rem;
+  }
+
+  .card .bill-container,
+  .card .stats-person {
+    width: 100%;
+    margin: 1rem;
+  }
+
+  .card .stats-person {
+    gap: 1rem;
+  }
+
+  .input-wrapper {
+    width: 95%;
+  }
+
+  .reset {
+    width: 100%;
+    margin-top: 0;
+    padding: 1rem 0;
+  }
+}
