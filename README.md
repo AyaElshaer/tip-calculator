@@ -61,4 +61,4 @@ writing different events like  'input', ' click' events.
 ### Screenshot
 
 ![desktop](./screenshots/desktop.png)
-![mobile](./screenshots/mobile.png)
+
