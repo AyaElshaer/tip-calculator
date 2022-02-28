@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://your-solution-url.com)
-- Live Site URL: [Live Site](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/AyaElshaer/tip-calculator)
+- Live Site URL: [Live Site](https://tip-calculator-ayaramadan.vercel.app/)
 
 ## My process
 
