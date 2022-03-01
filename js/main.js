@@ -77,7 +77,7 @@ function setPeopleNumber() {
 
 function calculateResult() {
   let tipAmount = (billValue * tipValue) / peopleNumber;
-  let total = (billValue + tipAmount) / peopleNumber;
+  let total = (billValue / peopleNumber ) + tipAmount ;
 
   tipPerPerson.textContent = "$" + tipAmount.toFixed(2);
   totalAmount.textContent = "$" + total.toFixed(2);
