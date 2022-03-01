@@ -18,12 +18,16 @@ let tipValue = 0.15;
 let peopleNumber = 1;
 
 function setBillValue() {
+
   billValue = parseFloat(bill.value);
+  if(!billValue){
+    billValue = 0.0;
+  }
   calculateResult();
 }
 
 function handleClick(e) {
-  
+  if (e.target.innerHTML) {
     let tip = e.target;
     tipButtons.forEach((btn) => {
       btn.classList.remove("btn-active");
@@ -32,7 +36,13 @@ function handleClick(e) {
 
     tipValue = parseInt(tip.innerHTML) / 100;
 
-    customTip.value = "";
+  }
+  else{
+    tipValue = 0.15;
+  }
+ 
+
+  customTip.value = "";
   calculateResult();
 }
 
@@ -48,13 +58,17 @@ function setCustomTip(e) {
 }
 
 function setPeopleNumber() {
-  peopleNumber = parseFloat(peopleInput.value);
-
+  peopleNumber =  parseFloat(peopleInput.value) ;
+  
   if (peopleNumber <= 0) {
     errorMsg.classList.add("show");
     peopleInput.classList.add("red-border");
     peopleNumber = 1;
-  } else {
+  } 
+  else if(!peopleNumber){
+    peopleNumber = 1;
+  }
+  else {
     errorMsg.classList.remove("show");
     peopleInput.classList.remove("red-border");
   }
@@ -63,7 +77,7 @@ function setPeopleNumber() {
 
 function calculateResult() {
   let tipAmount = (billValue * tipValue) / peopleNumber;
-  let total = tipAmount + billValue * tipValue;
+  let total = (billValue + tipAmount) / peopleNumber;
 
   tipPerPerson.textContent = "$" + tipAmount.toFixed(2);
   totalAmount.textContent = "$" + total.toFixed(2);
