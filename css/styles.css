@@ -303,6 +303,10 @@ input::placeholder {
     margin-bottom: 0;
   }
 
+  .card .bill-container, 
+  .card .stats-person {
+    gap: 4rem;
+}
   .tip-container .tip,
   .custom-input-tip {
     width: 44%;
@@ -321,6 +325,7 @@ input::placeholder {
 
   .card .stats-person {
     gap: 1rem;
+    margin-top: 2rem;
   }
 
   .reset {
@@ -328,4 +333,8 @@ input::placeholder {
     margin-top: 0;
     padding: 1rem 0;
   }
+
+  .error-people-msg {
+    font-size: 1.2rem;
+}
 }
