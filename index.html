@@ -23,41 +23,49 @@
   </head>
   <body>
     <main class="container">
-      <div class="logo">
+      <header class="logo">
         <img src="./images/logo.svg" alt="logo" />
-      </div>
+      </header>
 
-      <div class="card">
+      <section class="card">
         <div class="bill-container">
 
           <div class="bill">
-            <h3>Bill</h3>
+            <div class="input-label">
+              <h3>Bill</h3>
+              <div class="error-bill-msg">Enter only numbers</div>
+            </div>
+            
             <div class="input-wrapper">
-              <input class="input-text" type="text" name="input-bill"  id="bill-input" placeholder="0.0">
-              <img src="./images/icon-dollar.svg" alt="dollar-icon">
+              <input class="input-text" type="text" name="input-bill"  id="bill-input" placeholder="0">
+              <img src="./images/icon-dollar.svg" alt="dollar-icon" class="icon">
             </div>
           </div>
 
-          <div class="selected-tip">
+          <div class="tip-container">
             <h3>Select Tip %</h3>
-            <div class="tip-container">
+            <div class=" selected-tip">
               <div class="tip"> 5%</div>
               <div class="tip"> 10%</div>
               <div class="tip btn-active"> 15%</div>
               <div class="tip"> 25%</div>
               <div class="tip"> 50%</div>
-              <input class=" input-tip" type="text" name="input-tip" id="custom-tip" placeholder="Custom" >
+              <div class=" custom-input-tip" >
+                <input class=" input-tip" type="text" name="input-tip" id="custom-tip" placeholder="Custom" >
+                <p class="percentage">%</p>
+              </div>
             </div>
           </div>
 
           <div class="num-of-people">
-            <div class="people-label">
+            <div class="input-label">
               <h3>Number of People</h3>
+              <div class="error-people-msg"></div>
             </div>
-            <div class="error-msg">Can't be zero</div>
+            
             <div class="input-wrapper">
-              <input class="input-text" type="text" name="people-number" id="people" placeholder="1" >
-              <img src="./images/icon-person.svg" alt="person-icon">
+              <input class="input-text" type="text" name="people-number" id="input-people" placeholder="0" >
+              <img src="./images/icon-person.svg" class="icon" alt="icon">
           </div>
           </div>
 
@@ -85,7 +93,7 @@
 
           <button class="reset">Reset</button>
         </div>
-      </div>
+      </section>
     </main>
     <script src="js/main.js"></script>
   </body>
