@@ -29,6 +29,7 @@ h3 {
   font-weight: 700;
   padding: 1rem;
 }
+
 main.container {
   display: flex;
   flex-direction: column;
@@ -59,14 +60,13 @@ main .card {
 }
 
 .input-wrapper {
-  width: 90%;
+  width: 100%;
   position: relative;
 }
 
 .input-wrapper .input-text {
   width: 100%;
   border: none;
-  text-align: right;
   color: #00494d;
   background-color: #f4fafa;
   font-size: 2.5rem;
@@ -75,30 +75,35 @@ main .card {
   border-radius: 0.5rem;
   margin-top: 0.5rem;
   cursor: pointer;
+  border: 2px solid transparent;
+  text-align: right;
 }
 
 .input-wrapper .input-text:focus,
-.input-tip:focus {
+.custom-input-tip input:focus {
   outline: none;
   border: 2px solid var(--strong-cyan);
+  border-radius: 0.5rem;
 }
 
-.input-wrapper img {
+.input-wrapper img.icon {
   position: absolute;
-  top: 32%;
+  top: 50%;
   left: 5%;
+  transform: translate(-50%, -50%);
   width: 1.3rem;
 }
 
-.selected-tip .tip-container {
+.tip-container .selected-tip {
   display: flex;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
   width: 100%;
 }
 
-.tip-container .tip,
-.input-tip {
+.selected-tip .tip,
+.custom-input-tip {
   background-color: var(--very-dark-cyan);
   color: var(--white);
   font-size: 2.5rem;
@@ -109,13 +114,51 @@ main .card {
   margin-top: 0.8rem;
   width: 30%;
   cursor: pointer;
-  margin-right: 0.5rem;
 }
 
-.tip-container .tip:hover ,
-.input-tip:hover{
-    background-color: #9fe8df;
-    color: var(--very-dark-cyan);
+.custom-input-tip {
+  color: var(--very-dark-cyan) !important;
+  background-color: #f4fafa !important;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0rem;
+  border-radius: 0.5rem;
+}
+
+.custom-input-tip input {
+  color: var(--very-dark-cyan);
+  font-size: 2.2rem;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  display: inline;
+  border: none;
+  background-color: #f4fafa;
+}
+
+.custom-input-tip p {
+  font-size: 2.5rem;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #7f9c9f;
+}
+
+input::placeholder {
+  color: #7f9c9f;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.tip-container .tip:hover,
+.custom-input-tip:hover {
+  background-color: #9fe8df;
+  color: var(--very-dark-cyan);
 }
 
 .tip.btn-active {
@@ -123,32 +166,31 @@ main .card {
   color: var(--very-dark-cyan);
 }
 
-.input-tip {
-  font-size: 2.2rem;
-  border: none;
-  color: var(--very-dark-cyan) !important;
-  background-color: #f4fafa !important;
+.input-label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.error-msg {
+.error-people-msg,
+.error-bill-msg {
   display: none;
   color: rgb(221, 13, 13);
-  text-align: right;
-  margin-right: 6rem;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
-.error-msg.show {
+.error-people-msg.show,
+.error-bill-msg.show {
   display: block;
 }
 
-#people.red-border {
-  border: 0.5px solid red;
+#input-people.red-border {
+  border-color: red;
 }
 
-
-/* status for person */
+/* Stats for person */
 
 .card .stats-person {
   padding: 4rem;
@@ -204,12 +246,9 @@ main .card {
   font-family: "Space Mono", monospace;
   cursor: pointer;
 }
-.reset:hover{
-    background-color: #9fe8df;
-}
 
-@media (min-width: 1400px) {
-
+.reset:hover {
+  background-color: #9fe8df;
 }
 
 @media (max-width: 1400px) {
@@ -264,9 +303,10 @@ main .card {
     margin-bottom: 0;
   }
 
-  .tip-container .tip
-  ,.input-tip  {
+  .tip-container .tip,
+  .custom-input-tip {
     width: 44%;
+    margin-right: 0.5rem;
   }
 
   .stats .value {
@@ -276,15 +316,11 @@ main .card {
   .card .bill-container,
   .card .stats-person {
     width: 100%;
-    margin: 1rem;
+    margin: 0rem;
   }
 
   .card .stats-person {
     gap: 1rem;
-  }
-
-  .input-wrapper {
-    width: 95%;
   }
 
   .reset {
