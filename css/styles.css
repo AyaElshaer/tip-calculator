@@ -27,7 +27,7 @@ h3 {
   color: var(--dark-grayish-cyan);
   font-size: 1.5rem;
   font-weight: 700;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
 main.container {
@@ -92,11 +92,11 @@ main .card {
   left: 5%;
   transform: translate(-50%, -50%);
   width: 1.3rem;
+  pointer-events: none;
 }
 
 .tip-container .selected-tip {
   display: flex;
-  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
   width: 100%;
@@ -147,6 +147,7 @@ main .card {
   top: 50%;
   transform: translate(-50%, -50%);
   color: #7f9c9f;
+  pointer-events: none;
 }
 
 input::placeholder {
@@ -251,6 +252,14 @@ input::placeholder {
   background-color: #9fe8df;
 }
 
+
+.tip-per-person .value.msg,
+.total-person .value.msg {
+font-size: 2.5rem;
+display: flex;
+align-self: self-start;
+}
+
 @media (max-width: 1400px) {
   main .card {
     width: 90%;
@@ -336,5 +345,9 @@ input::placeholder {
 
   .error-people-msg {
     font-size: 1.2rem;
+}
+.tip-per-person .value.msg,
+.total-person .value.msg {
+font-size: 1.5rem;
 }
 }

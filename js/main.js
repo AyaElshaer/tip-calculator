@@ -14,7 +14,7 @@ peopleInput.addEventListener("input", setPeopleNumber);
 
 let billValue = 0;
 let tipValue = 0.15;
-let peopleNumber = 1;
+let peopleNumber ;
 
 function validateIninput(v){
   var rgx =  /^[0-9]*\.?[0-9]*$/;
@@ -33,6 +33,7 @@ function setBillValue() {
   else{
     errorBillMsg.classList.remove("show");
     billValue = parseFloat(bill.value);
+    calculateResult();
   }
 }
 
@@ -51,9 +52,10 @@ function handleClick(e) {
   }
   else{
     tipValue = 0.15;
+    calculateResult();
   }
-  customTip.value = "";
-  
+ 
+
 }
 
 function setCustomTip() {
@@ -63,6 +65,7 @@ function setCustomTip() {
   tipButtons.forEach((btn) => {
     btn.classList.remove("btn-active");
   });
+  calculateResult();
 
 }
 
@@ -92,19 +95,22 @@ function setPeopleNumber() {
 
 function calculateResult() {
  
-if(parseFloat(peopleInput.value) > 0){
-  
   let tipAmount = (billValue * tipValue) / peopleNumber;
   let total = (billValue / peopleNumber ) + tipAmount ;
 
-  tipPerPerson.textContent = "$" + tipAmount.toFixed(2);
-  totalAmount.textContent = "$" + total.toFixed(2);
+
+  if(isNaN(tipAmount)){
+    tipPerPerson.textContent = 'invaild result';
+    totalAmount.textContent =  'invaild result';
+    tipPerPerson.classList.add('msg')
+    totalAmount.classList.add('msg')
 }
 else{
-  tipPerPerson.textContent = '$0.0';
-  totalAmount.textContent = '$0.0';
+  tipPerPerson.textContent = "$" + tipAmount.toFixed(2);
+  totalAmount.textContent = "$" + total.toFixed(2);
+  tipPerPerson.classList.remove('msg')
+  totalAmount.classList.remove('msg')
 }
-
 }
 
 resetButton.addEventListener("click", function () {
