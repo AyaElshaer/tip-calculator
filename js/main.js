@@ -3,8 +3,8 @@ let peopleInput = document.getElementById("input-people");
 const selectedTip = document.querySelector(".selected-tip");
 const tipButtons = document.querySelectorAll(".tip");
 const customTip = document.querySelector(".input-tip");
-const tipPerPerson = document.querySelector(".tip-per-person .value");
-const totalAmount = document.querySelector(".total-person .value");
+const tipPerPerson = document.querySelector(".tip-per-person .value p");
+const totalAmount = document.querySelector(".total-person .value p");
 const resetButton = document.querySelector(".reset");
 
 bill.addEventListener("input", setBillValue);
@@ -102,14 +102,12 @@ function calculateResult() {
   if(isNaN(tipAmount)){
     tipPerPerson.textContent = 'invaild result';
     totalAmount.textContent =  'invaild result';
-    tipPerPerson.classList.add('msg')
-    totalAmount.classList.add('msg')
+ 
 }
 else{
   tipPerPerson.textContent = "$" + tipAmount.toFixed(2);
   totalAmount.textContent = "$" + total.toFixed(2);
-  tipPerPerson.classList.remove('msg')
-  totalAmount.classList.remove('msg')
+
 }
 }
 

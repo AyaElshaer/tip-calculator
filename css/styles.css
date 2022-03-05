@@ -21,6 +21,7 @@ body {
   font-family: "Space Mono", monospace;
   background-color: #c5e4e7;
   position: relative;
+  min-height: 700px;
 }
 
 h3 {
@@ -204,10 +205,11 @@ input::placeholder {
 
 .stats-person .stats > div {
   width: 100%;
-  margin-bottom: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 5rem;
+  margin-bottom: 2rem;
 }
 
 .stats {
@@ -218,6 +220,7 @@ input::placeholder {
   color: var(--white);
   font-size: 1.6rem;
   font-weight: 700;
+  margin-right: 60px;
 }
 
 .stats span {
@@ -226,7 +229,15 @@ input::placeholder {
 }
 
 .stats .value {
-  font-size: 4.6rem;
+  min-width: 240px;
+  min-height: 105px;
+  position: relative;
+}
+.stats .value p {
+  position: absolute;
+  top: 23%;
+  left: 20%;
+  font-size: 4rem;
   color: #26c0ab;
   font-weight: 700;
 }
@@ -252,12 +263,11 @@ input::placeholder {
   background-color: #9fe8df;
 }
 
-
 .tip-per-person .value.msg,
 .total-person .value.msg {
-font-size: 2.5rem;
-display: flex;
-align-self: self-start;
+  font-size: 2.5rem;
+  display: flex;
+  align-self: self-start;
 }
 
 @media (max-width: 1400px) {
@@ -279,10 +289,6 @@ align-self: self-start;
   .card .stats-person {
     gap: 3rem;
   }
-
-  .stats-person .stats > div {
-    margin-bottom: 3rem;
-  }
 }
 
 @media (max-width: 1000px) {
@@ -299,6 +305,10 @@ align-self: self-start;
     margin-left: 3rem;
     justify-content: center;
   }
+  .stats .value p {
+    font-size: 3.5rem;
+    
+  }
 }
 
 @media (max-width: 768px) {
@@ -312,10 +322,10 @@ align-self: self-start;
     margin-bottom: 0;
   }
 
-  .card .bill-container, 
+  .card .bill-container,
   .card .stats-person {
     gap: 4rem;
-}
+  }
   .tip-container .tip,
   .custom-input-tip {
     width: 44%;
@@ -323,7 +333,12 @@ align-self: self-start;
   }
 
   .stats .value {
-    font-size: 3rem;
+    min-width: 200px;
+  }
+
+  .stats .value p {
+    font-size: 2.5rem;
+ 
   }
 
   .card .bill-container,
@@ -345,9 +360,9 @@ align-self: self-start;
 
   .error-people-msg {
     font-size: 1.2rem;
-}
-.tip-per-person .value.msg,
-.total-person .value.msg {
-font-size: 1.5rem;
-}
+  }
+  .stats p {
+    margin-right: 10px;
+  }
+
 }
